@@ -1,0 +1,44 @@
+.block {
+
+    float: left;
+    width: 250px;
+    border: 1px solid rgb(170, 158, 158);
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 1em;
+    background-color: rgb(238, 237, 234);
+    margin-left: 170px;
+    margin-top: 85px;
+    box-shadow: 2px 2px 2px rgb(145, 115, 28);
+    height: 400px;
+
+}
+.block_01{
+    float: center;
+    width: 250px;
+    border: 1px solid rgb(170, 158, 158);
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 1em;
+    background-color: rgb(238, 237, 234);
+    margin-left: 770px;
+    margin-top: 35px;
+    box-shadow: 10px 10px 10px rgb(145, 115, 28);
+    height: 400px;
+}
+
+
+h3 {
+    background-color: rgb(238, 230, 221);
+    width: 55%;
+    padding-left: 8px;
+    height: 25px;
+    font-size: 18px;
+}
+
+input[type=button] {
+    border-radius: 2em;
+    background-color: rgb(104, 104, 103);
+    color: whitesmoke;
+    box-shadow: 7px 7px 6px rgb(207, 193, 177);
+}
