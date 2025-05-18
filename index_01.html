@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>Pann Yu Mon</title>
+  <meta name="description" content="書籍「動くWebデザインアイディア帳」のサンプルサイトです">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/reset.css">
+  <link rel="stylesheet" href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/5-4-1/css/5-4-1.css">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+
+  <!-- jQuery & jQuery UI -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      $("#accordion").accordion({
+        collapsible: true,
+        heightStyle: "content"
+      });
+    });
+  </script>
+
+  <style>
+    .section {
+      display: flex;
+      align-items: center;
+      padding: 40px;
+      width: 80%;
+      margin: auto;
+    }
+    .section img {
+      height: 200px;
+      width: 200px;
+      border-radius: 50%;
+      margin-right: 20px;
+    }
+    .text h1 {
+      margin: 0;
+      font-size: 1.8em;
+    }
+    .text p {
+      margin: 5px 0;
+    }
+    .students {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin: 40px auto;
+      width: 90%;
+    }
+    .student-card {
+      border: 1px solid #ccc;
+      padding: 20px;
+      width: 200px;
+      text-align: center;
+      background: #f9f9f9;
+      border-radius: 10px;
+    }
+    .student-card img {
+      width: 100%;
+      height: auto;
+    }
+    .student-card a button {
+      margin-top: 10px;
+      padding: 8px 12px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="section">
+    <img src="me.jpg" alt="Pann Yu Mon">
+    <div class="text">
+      <h1>Dr. Pann Yu Mon</h1>
+      <p>Assistant Professor</p>
+      <p>Information Science</p>
+      <p>Faculty of Information</p>
+    </div>
+  </div>
+
+  <div class="wrapper">
+    <ul class="tab">
+      <li><a href="#research">Research</a></li>
+      <li><a href="#publication">Publications</a></li>
+      <li><a href="#teaching">Teaching</a></li>
+      <li><a href="#supervision">Supervision</a></li>
+    </ul>
+
+    <div id="research" class="area">
+      <h2>Research Interest</h2>
+      <p>My research interests include big data analytics, software engineering, cloud computing, natural language processing and information retrieval.</p>
+      <ul>
+        <li>Graph Database</li>
+        <li>Smart Campus application: face recognition for student performance data</li>
+        <li>Data analysis and visualization on global education and migration data</li>
+      </ul>
+    </div>
+
+    <div id="publication" class="area">
+      <div id="accordion">
+        <h3>Journal Papers</h3>
+        <div>
+          <ol>
+            <li><b><u>Pann Yu Mon</u></b>, Yoshiki Mikami, Myanmar Language Search Engine, IJCSI, 2011.</li>
+            <li><b><u>Pann Yu Mon</u></b>, Chew Yew Choong, Language Specific Crawler, IJCSI, 2011.</li>
+          </ol>
+        </div>
+
+        <h3>International Conference Papers</h3>
+        <div>
+          <ol>
+            <li><b><u>Pann Yu Mon</u></b>, et al., Implementation of Cooperative and WIL, WACE 2022.</li>
+            <li><b><u>Pann Yu Mon</u></b>, et al., Statistical Analysis of Myanmar Words, ICCA 2009.</li>
+            <li>Arai Yuki, <b><u>Pann Yu Mon</u></b>, et al., Efficient Language Focused Crawler, IPSJ 2008.</li>
+            <li><b><u>Pann Yu Mon</u></b>, Language Specific Crawler, HC 2008.</li>
+            <li><b><u>Pann Yu Mon</u></b>, Myanmar Language Search Engine, ICTer 2010.</li>
+            <li><b><u>Pann Yu Mon</u></b>, Web Pages Indexer, ICCA 2011.</li>
+          </ol>
+        </div>
+
+        <h3>Books</h3>
+        <div>
+          <ol>
+            <li>Yoshiki Mikami, <b><u>Pann Yu Mon</u></b>, et al., Linguistic Diversity on the Web, UNESCO, 2011.</li>
+            <li><b><u>Pann Yu Mon</u></b>, Madhukara Phatak, Complexities of Asian Queries, UNESCO, 2011.</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+    <div id="teaching" class="area">
+      <h2>Major</h2>
+      <ul>
+        <li>Introduction to Programming I (Python)</li>
+        <li>Web Development Course</li>
+        <li>Comprehensive ICT Utilization Course</li>
+        <li>Introduction to Programming II (Java)</li>
+        <li>Clinical Practice Training I & II</li>
+      </ul>
+      <h2>Minor</h2>
+      <ul>
+        <li>ICT Exercises: Basic Information</li>
+        <li>ICT Exercises: Hardware & Software</li>
+      </ul>
+    </div>
+
+    <div id="supervision" class="area">
+      <h2>Student Research</h2>
+      <div class="students">
+        <div class="student-card">
+          <h3>岡田美咲</h3>
+          <img src="images/sample.png" alt="Misaki">
+          <p>4th Year Student</p>
+          <a href="okada.html"><button>Details</button></a>
+        </div>
+        <div class="student-card">
+          <h3>二田</h3>
+          <img src="images/sample1.png" alt="Futata">
+          <p>4th Year Student</p>
+          <a href="futata.html"><button>Details</button></a>
+        </div>
+        <div class="student-card">
+          <h3>佐々木</h3>
+          <img src="images/sample.png" alt="Sasaki">
+          <p>4th Year Student</p>
+          <a href="sasaki.html"><button>Details</button></a>
+        </div>
+        <div class="student-card">
+          <h3>佐藤</h3>
+          <img src="images/sample.png" alt="Sato">
+          <p>4th Year Student</p>
+          <a href="sato.html"><button>Details</button></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

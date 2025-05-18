@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>小柳 - AIによる動物の動作認識と感情の読み取り</title>
+  <link rel="stylesheet" href="css/index.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .mn {
+      text-align: center;
+      margin: 20px 0;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      background-color: #f9f9f9;
+    }
+    .container h3 {
+      margin-top: 20px;
+      font-size: 1.2em;
+    }
+    .container p {
+      line-height: 1.6;
+    }
+    .image-section {
+      text-align: center;
+      margin: 30px 0;
+    }
+    .image-section img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+    }
+    .back-button {
+      text-align: center;
+      margin-top: 30px;
+    }
+    a {
+      color: blue;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="mn">
+    <h2>小柳 - AIによる動物の動作認識と感情の読み取り</h2>
+  </div>
+
+  <div class="container">
+    <h3>【研究背景】</h3>
+    <p>
+      近年のAI技術の発展は世の中に大きな影響をもたらしている。機械学習と視覚認識技術の統合により、複雑な動きのパターンや感情の解析を可能とする道が開かれた。これまでは人間への使用に焦点が当てられていたが、この技術を動物に応用することへの関心が高まっている。
+    </p>
+
+    <h3>【研究目的】</h3>
+    <p>
+      動物の動作を正確に検出するAIモデルを開発し、拡張として動物の感情を解釈するプロセスを実装する。これにより、動物福祉や獣医学、ペットとの日常生活に利益をもたらすことを目的とする。
+    </p>
+
+    <h3>【調査方法】</h3>
+    <p>
+      対象を猫と定め、動画内の動作（横臥、立位、歩行）をMediaPipeとOpenCVにより検出し、比較検証を行った。<br>
+      <ul>
+        <li>高度な特徴抽出：画像サイズの標準化により、一貫性と信頼性を向上。</li>
+        <li>マルチスレッド処理：データセットを効率的に処理。</li>
+        <li>分類器トレーニングの強化：改良された特徴量を用い、精度を99%以上に向上。</li>
+      </ul>
+    </p>
+
+    <h3>【調査結果】</h3>
+    <p>
+      各モデルの検出精度は以下の通り：<br>
+      ・MediaPipe：全体で46.4%、横臥には一定の精度を示すも、他は課題あり。<br>
+      ・OpenCV：歩行・横臥で精度向上（全体61.4%）、立位は0%。<br>
+      ・トレーニング済モデル：全体で99%以上の精度。学習効果が十分に発揮された。
+    </p>
+
+    <div class="image-section">
+      <img src="img/oyanagi_01.png" alt="動作検出と混同行列の比較結果">
+    </div>
+
+    <h3>【考察および今後の課題】</h3>
+    <p>
+      動物の動作認識精度は向上したが、データセットの汎用性が課題。より多様なデータでの再学習が必要。また、感情認識においては動作に紐づく感情の理解にさらなる研究が求められる。
+    </p>
+
+    <h3>論文リンク</h3>
+    <p>
+      <a href="https://www.jstage.jst.go.jp/article/jasmin/202411/0/202411_29/_article/-char/ja" target="_blank">https://www.jstage.jst.go.jp/article/jasmin/202411/0/202411_29/_article/-char/ja</a>
+    </p>
+
+    <div class="back-button">
+      <a href="index.html"><input type="button" value="Back to Lab / 研究室に戻る"></a>
+    </div>
+  </div>
+</body>
+</html>

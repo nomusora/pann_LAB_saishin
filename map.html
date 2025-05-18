@@ -1,0 +1,197 @@
+<html>
+<script src="https://cdn.anychart.com/releases/8.10.0/js/anychart-core.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.10.0/js/anychart-map.min.js"></script>
+<script src="https://cdn.anychart.com/geodata/latest/custom/world/world.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.15/proj4.js"></script>
+<script src="https://cdn.anychart.com/releases/8.10.0/js/anychart-data-adapter.min.js"></script>
+<div id="container"></div>
+
+<script>
+    anychart.onDocumentReady(function () {
+ // anychart.data.loadJsonFile('https://gist.githubusercontent.com/shacheeswadia/a20ba5b62cef306ccc1a8e8857e5316a/raw/0337b16fa8dc4de97263bc0a4ededf935a529c35/migration-data.json', function (data) {
+    anychart.data.loadJsonFile('https://raw.githubusercontent.com/nicoelashtet/map/main/study_abroad.json', function (data) {
+ //   anychart.data.loadJsonFile('migrant.json', function (data) {
+
+    // create a connector map chart instance
+    var map = anychart.connector();
+
+    // include the world map geodata
+    map.geoData('anychart.maps.world');
+
+    // darken all regions
+    map
+      .unboundRegions()
+      .enabled(true)
+      .fill('#E1E1E1')
+      .stroke('#D2D210');
+
+    // set the map chart title
+    map
+      .title()
+      .enabled(true)
+      .useHtml(true)
+      .padding([0, 0, 40, 0])
+      .text(
+        '<span style="color:#212121;">Studying abroad to the USA from the top 15 countries</span><br/>' +
+        '<span style="font-size: 14px;">Majority of the migrants come from Mexico, Asia and South America</span>'
+      );
+    
+    // display all labels even if there is an overlap
+    map. 
+      overlapMode("allow-overlap");
+    
+    // a helper function to create the series
+    // that will form the connector lines
+    var createSeries = function (name, data, color) {
+        
+      // create and customize the connector series
+      var connectorSeries = map
+        .connector(data)
+        .name(name)
+        .fill(color)
+        .stroke({
+          color: color,
+          thickness: 2
+        });
+        
+      // change the coloring of the connector line in the hovered state
+      connectorSeries
+        .hovered()
+        .stroke('1.5 #212121')
+        .fill('#212121');
+         
+      // configure the arrow marker
+      connectorSeries
+        .markers()
+        .position('100%')
+        .fill(color)
+        .stroke({
+          color: color
+        })
+        .size(8);
+         
+      // configure the arrow marker in the hovered state
+      connectorSeries
+        .hovered()
+        .markers()
+        .position('100%')
+        .size(10)
+        .fill('#212121')
+        .stroke('2 #455a64');
+
+      // set the labels for the source countries
+      connectorSeries
+        .labels()
+        .enabled(true)
+        .format(function () {
+          return this.getData('from');
+        })
+        .fontColor('#212121');
+         
+      // set the thickness of the connector line based on the series
+      if (name === 'More than 50,000') {
+        connectorSeries.startSize(5).endSize(2);
+      } else if (name === '40,000 to 50,000') {
+        connectorSeries.startSize(3.5).endSize(1.5);
+      } else if (name === '20,000 to 40,000') {
+        connectorSeries.startSize(3).endSize(1);
+      } else if (name === '16,000 to 20,000') {
+        connectorSeries.startSize(2).endSize(0.5);
+      } else {
+        connectorSeries.startSize(1).endSize(0);
+      }
+         
+      // configure the settings for the legend items
+      connectorSeries
+        .legendItem()
+        .iconType('square')
+        .iconFill(color)
+        .iconStroke(false);
+      
+      // configure the tooltip setting for the series
+      connectorSeries
+        .tooltip()
+          .useHtml(true)
+          .format(function () {
+            return (
+              '<h4 style="font-size:14px; font-weight:400; margin: 0.25rem                 0;">From:<b> ' + this.getData('from') +  '</b></h4>' +
+              '<h4 style="font-size:14px; font-weight:400; margin: 0.25rem                 0;">Total Migrants Studies::<b> ' +        this.getData('total').toLocaleString() + '</b></h4>'
+            );
+          });
+    };
+
+    // create a dataset from the data
+    var dataSet = anychart.data.set(data).mapAs();
+
+    // create five series filtering the data
+    // by the absolute values of the migration numbers
+    createSeries(
+      'Less than 16,000',
+      dataSet.filter('total', filterFunction(0, 16000)),
+      '#fed693'
+    );
+    createSeries(
+      '16,000 to 20,000',
+      dataSet.filter('total', filterFunction(16000, 20000)),
+      '#f5ad52'
+    );
+    createSeries(
+      '20,000 to 40,000',
+      dataSet.filter('total', filterFunction(20000, 40000)),
+      '#3fb8c5'
+    );
+    createSeries(
+      '40,000 to 50,000',
+      dataSet.filter('total', filterFunction(40000, 50000)),
+      '#1792c0'
+    );
+    createSeries(
+      'More than 50,000',
+      dataSet.filter('total', filterFunction(50000, 100000)),
+      '#1c5eaa'
+    );
+    createSeries(
+      'More than 100,000',
+      dataSet.filter('total', filterFunction(100000, 1000000)),
+      '#1c5eee'
+    );
+
+    // set up the legend for the sample
+    map
+      .legend()
+      .enabled(true)
+      .position('bottom')
+      .padding([0, 0, 20, 0])
+      .fontSize(10);
+
+    map
+      .legend()
+      .title()
+      .enabled(true)
+      .fontSize(13)
+      .padding([0, 0, 5, 0])
+      .text('Number of Students abroad (in the year 2000)');    
+
+    // set the container
+    map.container('container');
+
+    // draw the map
+    map.draw();
+
+  });
+});
+
+// a helper function to bind the data field to the local var.
+function filterFunction(val1, val2) {
+  if (val2) {
+    return function (fieldVal) {
+      return val1 <= fieldVal && fieldVal < val2;
+    };
+  }
+  return function (fieldVal) {
+    return val1 <= fieldVal;
+  };
+}
+</script>
+
+</html>

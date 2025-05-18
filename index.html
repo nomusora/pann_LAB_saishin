@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Pann研究室</title>
+  <link rel="stylesheet" href="css/index.css">
+  
+</head>
+<body>
+
+<div class="mn">
+  <h2>Pann 研究室</h2>
+</div>
+
+<div class="block_01">
+  <img src="img/me.jpg" width="200" height="200">
+  <p><strong>Pann Yu Mon</strong> </p>
+  <p>Associate Professor</p>
+  <a href="pannyumon_Japanese.html"><input type="button" value="Details"></a>
+</div>
+
+<!-- 🔘 Tab Buttons -->
+<div class="tab-buttons">
+  <button onclick="showTab('tab-2023')">2023~2024</button>
+  <button onclick="showTab('tab-2024')">2024~2025</button>
+  <button onclick="showTab('tab-2025')">2025~2026</button> <!-- ✅ NEW -->
+</div>
+
+<!-- 📌 Tab Content 2023~2024 -->
+<div class="tab-content active" id="tab-2023">
+  <div class="flex-container">
+    <div class="block">
+      <div class="name-tag"><h3>岡田美咲</h3></div>
+      <img src="img/pic_01.jpg.png" width="150" height="150">
+      <p>(2023~2024) 情報学部4年生。</p>
+      <p>音声認識システムによる精度調査</p>
+      <a href="okada.html"><input type="button" value="Details"></a>
+    </div>
+    <div class="block">
+      <div class="name-tag"><h3>二田</h3></div>
+      <img src="img/pic_02.png" width="150" height="150">
+      <p>(2023~2024) 情報学部4年生。</p>
+      <p>学生移動データのグラフデータベース化</p>
+      <a href="futata.html"><input type="button" value="Details"></a>
+    </div>
+    <div class="block">
+      <div class="name-tag"><h3>佐々木</h3></div>
+      <img src="img/pic_03.png" width="150" height="150">
+      <p>(2023~2024) 情報学部4年生。</p>
+      <p>八幡宮神社のデジタル変革</p>
+      <a href="sasaki.html"><input type="button" value="Details"></a>
+    </div>
+    <div class="block">
+      <div class="name-tag"><h3>佐藤</h3></div>
+      <img src="img/pic_04.png" width="150" height="150">
+      <p>(2023~2024) 情報学部4年生。</p>
+      <p>Twitch配信における言語・ゲーム分析</p>
+      <a href="satou.html"><input type="button" value="Details"></a>
+    </div>
+  </div>
+</div>
+
+<!-- 📌 Tab Content 2024~2025 -->
+<div class="tab-content" id="tab-2024">
+  <div class="flex-container">
+    <div class="block_03">
+      <div class="name-tag"><h3>吉村</h3></div>
+      <img src="img/pic_05.png" width="150" height="150">
+      <p>(2024~2025) 情報学部4年生。</p>
+      <p>three.jsによる3DモデルのECサイト導入</p>
+      <a href="yoshimura.html"><input type="button" value="Details"></a>
+    </div>
+    <div class="block_03">
+      <div class="name-tag"><h3>ゆいな</h3></div>
+      <img src="img/pic_06.png" width="150" height="150">
+      <p>(2024~2025) 情報学部4年生。</p>
+      <p>ドローンによる不審動作検知</p>
+      <a href="yuina.html"><input type="button" value="Details"></a>
+    </div>
+    <div class="block_03">
+      <div class="name-tag"><h3>小柳歩夢</h3></div>
+      <img src="img/pic_09.png" width="150" height="150">
+      <p>(2024~2025) 情報学部4年生。</p>
+      <p>ドローンによる不審動作検知</p>
+      <a href="oyanagi.html"><input type="button" value="Details"></a>
+    </div>
+    <div class="block_03">
+      <div class="name-tag"><h3>高橋</h3></div>
+      <img src="img/pic_10.png" width="150" height="150">
+      <p>(2024~2025) 情報学部4年生。</p>
+      <p>ドローンによる不審動作検知</p>
+      <a href="takahashi.html"><input type="button" value="Details"></a>
+    </div>
+  </div>
+</div>
+
+
+
+<script>
+  function showTab(tabId) {
+    const tabs = document.querySelectorAll('.tab-content');
+    tabs.forEach(tab => tab.classList.remove('active'));
+
+    document.getElementById(tabId).classList.add('active');
+  }
+</script>
+
+</body>
+</html>

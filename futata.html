@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>二田 - 研究詳細</title>
+  <link rel="stylesheet" href="css/index.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .mn {
+      text-align: center;
+      margin: 20px 0;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      background-color: #f9f9f9;
+    }
+    .container h3 {
+      margin-top: 20px;
+      font-size: 1.2em;
+    }
+    .container p {
+      line-height: 1.6;
+    }
+    .poster {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin: 20px 0;
+      align-items: center;
+    }
+    .poster img {
+      max-width: 100%;
+      height: auto;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    .back-button {
+      text-align: center;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+  <div class="mn">
+    <h2>二田 - 研究詳細 / Research Details</h2>
+  </div>
+  
+  <div class="container">
+    <h3>研究タイトル / Research Title</h3>
+    <p>
+      研究テーマ: 世界の学生移動データのグラフデータベースによる明瞭化<br>
+      Research Topic: Clarifying Global Student Mobility Data through Graph Database
+    </p>
+
+    <h3>研究目的 / Research Objective</h3>
+    <p>
+      特定の国への各国の留学生数をNeo4jでグラフデータベース化することによって、留学生データの明瞭化を行い、新たな視点からデータの精査を行う。
+      <br>
+      This research visualizes international student numbers using Neo4j to clarify trends and allow data analysis from a new perspective.
+    </p>
+
+    <h3>使用データ / Dataset</h3>
+    <p>
+      https://stats.oecd.org/Index.aspx?DataSetCode=EDU_ENRL_MOBILE より、OECDが公開する留学生データを使用。
+      年度（2013年、2019年）、国（アメリカ・日本・オーストラリア）、学習レベル（大学）に基づき、Neo4j Desktopによりグラフデータベースを構築。
+      <br>
+      Data from the OECD website was used, covering international student mobility by country and year (2013, 2019). The data was structured into a graph database using Neo4j Desktop.
+    </p>
+
+    <h3>可視化 / Visualizations</h3>
+    <div class="poster">
+      <img src="img/gd_01.jpg" alt="Graph Visualization 1">
+      <img src="img/gd_02.jpg" alt="Graph Visualization 2">
+      <img src="img/gd_03.jpg" alt="Graph Visualization 3">
+    </div>
+
+    <div class="back-button">
+      <a href="index.html"><input type="button" value="Back to Lab / 研究室に戻る"></a>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>アパレル系ECサイトにおけるthree.jsを使用した3D仮想モデルの導入</title>
+  <link rel="stylesheet" href="css/index.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h2, h3 {
+      text-align: center;
+    }
+    .image {
+      text-align: center;
+      margin: 20px 0;
+    }
+    .image img {
+      max-width: 100%;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+    .section {
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>アパレル系ECサイトにおけるthree.jsを使用した3D仮想モデルの導入</h2>
+
+    <div class="image">
+      <img src="img/yoshimura.jpg" alt="3Dモデル説明画像">
+    </div>
+
+    <div class="section">
+      <h3>研究背景</h3>
+      <p>従来のアパレルサイトにおける商品画像から読み取れる情報はとても少ない。</p>
+    </div>
+
+    <div class="section">
+      <h3>研究目的</h3>
+      <p>従来の2D画像による商品表示の限界を3D技術を使用し克服。より豊かな購買体験を提供する。3Dモデルを活用して、ユーザーの商品理解を向上させる。返品率の低減と顧客満足度の向上の可能性を示す。</p>
+    </div>
+
+    <div class="section">
+      <h3>方法論・計画</h3>
+      <ul>
+        <li><strong>3Dmodel制作:</strong> ソフト: Blender</li>
+        <li><strong>システムの制作:</strong> IDE: Visual Studio Code, 言語: JavaScript</li>
+        <li><strong>3Dmodelとシステムの結合:</strong> ライブラリ: Three.js, API: model-viewer</li>
+        <li><strong>テスト・導入:</strong> webブラウザ上で動作</li>
+      </ul>
+      <p>本システムでは、Blenderで制作した3Dモデルをglbファイルに変換し、model-viewerを用いてThree.jsと組み合わせてWeb上に導入した。光源、カメラ、サイズ調整の最適化も可能とした。</p>
+    </div>
+
+    <div class="section">
+      <h3>結果</h3>
+      <p>ユーザーがWeb上で3Dモデルを直感的に操作し、衣類の質感やサイズ感を視覚的に把握できる環境を構築した。モデルの回転やズーム機能で詳細な情報取得が可能となり、顧客体験の向上が期待される。</p>
+    </div>
+
+    <div class="section">
+      <h3>参考文献</h3>
+      <ol>
+        <li>Recustomer,「2023年度 ECサイトの返品・交換データ調査レポート」, <a href="https://prtimes.jp/main/html/rd/p/000000059.000046039.html" target="_blank">link</a></li>
+        <li>How to Reduce Ecommerce Return Rates: <a href="https://www.richpanel.com/blog/ecommercej-return-rates" target="_blank">link</a></li>
+        <li>Fashion E-Commerce in the 3D Digital Era: <a href="https://kth.diva-portal.org/smash/get/diva2:1231549/FULLTEXT02.pdf" target="_blank">link</a></li>
+        <li><a href="https://modelviewer.dev/" target="_blank">model-viewer</a></li>
+      </ol>
+    </div>
+    <div class="back-button">
+      <a href="index.html"><input type="button" value="Back to Lab / 研究室に戻る"></a>
+    </div>
+  </div>
+</body>
+</html>

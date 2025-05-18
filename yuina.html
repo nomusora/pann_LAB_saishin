@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>ドローンによる公共空間における不審な動作検知</title>
+  <link rel="stylesheet" href="css/index.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #93b4ca;
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h2, h3 {
+      text-align: center;
+    }
+    .image {
+      text-align: center;
+      margin: 20px 0;
+    }
+    .image img {
+      max-width: 100%;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+    .section {
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>ドローンによる公共空間における不審な動作検知</h2>
+
+    <div class="image">
+      <img src="img/yuina.png" alt="ドローンによる監視システム">
+    </div>
+
+    <div class="section">
+      <h3>研究背景</h3>
+      <p>通学路などの居住区画に監視カメラを死角なく設置するには以下のような課題がある：</p>
+      <ul>
+        <li>街頭に満遍なく配置する必要があり、コストが大幅にかかる。</li>
+        <li>狭い道や設置場所がない場合、設置が困難。</li>
+        <li>死角をカバーするためにはさらにコストが増加する。</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h3>研究目的</h3>
+      <p>ドローンを活用して空から監視することで、死角のない視点を確保し、不審な動作（パンチ・キック）を自動で検出することで、人的な常時監視を不要とすることを目的とする。</p>
+    </div>
+
+    <div class="section">
+      <h3>実装方法</h3>
+      <ul>
+        <li><strong>使用ドローン：</strong> DJI Tello</li>
+        <li><strong>接続方法：</strong> Wi-Fi経由でPCと接続</li>
+        <li><strong>骨格推定：</strong> OpenCV2、MediaPipe、OpenPose</li>
+      </ul>
+      <p>骨格推定を基に、パンチやキックといった攻撃的な動作を検出するアルゴリズムを構築。</p>
+    </div>
+
+    <div class="section">
+      <h3>結果と検出例</h3>
+      <p>以下の条件で動作が検出されると、画面上に警告が表示される。5回以上の検出で「DENGER」と表示される。</p>
+      <div class="image">
+        <img src="img/yuina_01.png" alt="不審動作検出例">
+      </div>
+      
+      <p>映像は自動保存され、後から確認可能。</p>
+    </div>
+
+    <div class="section">
+      <h3>考察および今後の課題</h3>
+      <p>本研究では、ドローンが固定型監視カメラの代替手段として有効であることが示された。死角の解消や設置コスト削減が期待される。</p>
+      <p>ただし、動作検出の精度向上や、パンチ・キック以外の複雑な動作検知にも対応することが今後の課題である。</p>
+    </div>
+    <div class="back-button">
+      <a href="index.html"><input type="button" value="Back to Lab / 研究室に戻る"></a>
+    </div>
+  </div>
+  
+</body>
+</html>

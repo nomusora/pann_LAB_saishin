@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>髙橋 - OLS機能開発とAI問題自動生成</title>
+  <link rel="stylesheet" href="css/index.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .mn {
+      text-align: center;
+      margin: 20px 0;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      background-color: #f9f9f9;
+    }
+    .container h3 {
+      margin-top: 20px;
+      font-size: 1.2em;
+    }
+    .container p {
+      line-height: 1.6;
+    }
+    .image-section {
+      text-align: center;
+      margin: 30px 0;
+    }
+    .image-section img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+    }
+    .back-button {
+      text-align: center;
+      margin-top: 30px;
+    }
+    a {
+      color: blue;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="mn">
+    <h2>髙橋 - OLS機能開発とAI問題自動生成</h2>
+  </div>
+
+  <div class="container">
+    <h3>【研究背景】</h3>
+    <p>
+      本研究は、Off-Site Learning System（OLS）の新規機能開発と、OpenAIを活用したAIによる問題自動生成システムの構築を目的としている。教師の負担軽減や学習効率向上を目指す。
+    </p>
+
+    <h3>【研究目的】</h3>
+    <p>
+      PartⅠではOLSに画像アップロード機能を実装し、PartⅡではAIによる問題自動生成の精度と有効性を評価する。
+    </p>
+
+    <h3>【実装内容】</h3>
+    <p>
+      <strong>PartⅠ：OLS機能拡張</strong><br>
+      - ファイル形式：JPEG, PNG, GIF / サイズ：最大2MB<br>
+      - 画像アップロードによる問題作成システムの実装（PHP, Vue.js使用）<br>
+      <br>
+      <strong>PartⅡ：AIによる問題自動生成</strong><br>
+      - OpenAI APIを用いた問題生成と自動検証システム<br>
+      - 入力内容に応じてJSON形式で問題出力・検証後DBへ登録
+    </p>
+
+    <h3>【評価結果と考察】</h3>
+    <p>
+      <strong>PartⅠ：</strong><br>
+      - 評価条件：60枚の画像（532KB〜2MB）を使用<br>
+      - 成功率100%、エラー率0%<br><br>
+
+      <strong>PartⅡ：</strong><br>
+      - 試行回数：50回（5問×50 = 250問）<br>
+      - 精度：93.2%、関連度：79.2%、生成時間：平均5秒/問<br>
+      - 一部誤生成あり、再検証プロセスの導入が今後の課題
+    </p>
+
+    <div class="image-section">
+      <img src="img/takahashi_01.png" alt="システム構成と評価結果">
+    </div>
+     <div class="image-section">
+      <img src="img/takahashi_system.png" alt="システム構成と評価結果">
+    </div>
+
+    <h3>【今後の課題】</h3>
+    <p>
+      AIによる問題生成の精度向上と分野関連性の最適化が課題。基本情報技術者試験データを事前学習に用いることも検討されている。
+    </p>
+
+    <h3>参考文献</h3>
+    <p>
+      平山泰暉, 坂井柊, 佐藤貴也, 平川秀樹 (2024). 反転授業を支えるオンライン学習Webシステムの開発および大学における実運用結果. 情報処理学会研究報告, Vol.2024-CE-175 No.2, pp.1-8.
+    </p>
+
+    <div class="back-button">
+      <a href="index.html"><input type="button" value="Back to Lab / 研究室に戻る"></a>
+    </div>
+  </div>
+</body>
+</html>
