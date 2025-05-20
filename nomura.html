@@ -50,6 +50,7 @@
   </style>
 </head>
 <body>
+    <p>ver1.1.0</p>
   <div class="mn">
     <h2>野村空仁 - 研究詳細 / Research Details</h2>
   </div>
@@ -66,63 +67,36 @@
     <p>自社製品が売り上げランキングで何位になったのかをPower Automate Desktop自動で取得してVBAを使ってExcelに記憶していくシステムを作りました</p>
     <img src="img/野村実習1-1.png"width="300"><img src="img/野村実習1-2.png"width="300"><br>
     
-    <button id="downloadBtn">画像をダウンロード</button><br>
-
-    <script>
-        document.getElementById('downloadBtn').addEventListener('click', function() {
-          // ダウンロード用のリンクを作成
-          const link = document.createElement('a');
-          link.href = document.getElementById('myImage').src;
-          link.download = 'img/野村実習1-1.png'; 
-          link.download = 'img/野村実習1-2.png';// ダウンロード時のファイル名
-          // リンクをクリックしてダウンロードを実行
-          document.body.appendChild(link);
-          link.click();
-          document.body.removeChild(link);
-        });
-    </script>
+    <a href="img/野村実習1-1.png" download>
+        <button>1枚目の画像をダウンロード</button>
+    </a>
+    <a href="img/野村実習1-2.png" download>
+        <button>2枚目の画像をダウンロード</button>
+    </a><br>
 
     <h3>臨地実務実習Ⅱ / 2nd Clinical Practice</h3>
     <p>Adam-innovation</p>
     <p>海外向けECサイトのUIの研究と提案、日本語商品の英語翻訳などを行いました</p>
     <img src="img/野村実習2-1.png"width="300"><img src="img/野村実習2-2.png"width="300"><br>
 
-    <button id="downloadBtn">画像をダウンロード</button><br>
-
-    <script>
-        document.getElementById('downloadBtn').addEventListener('click', function() {
-          // ダウンロード用のリンクを作成
-          const link = document.createElement('a');
-          link.href = document.getElementById('myImage').src;
-          link.download = 'img/野村実習2-1.png'; 
-          link.download = 'img/野村実習2-2.png';// ダウンロード時のファイル名
-          // リンクをクリックしてダウンロードを実行
-          document.body.appendChild(link);
-          link.click();
-          document.body.removeChild(link);
-        });
-    </script>
+    <a href="img/野村実習2-1.png" download>
+        <button>1枚目の画像をダウンロード</button>
+    </a>
+    <a href="img/野村実習2-2.png" download>
+        <button>2枚目の画像をダウンロード</button>
+    </a><br>
     
     <h3>Ollama使ってみた / Local AI Ollama</h3>
     <p>オフライン環境でLLMが使える!?</p>
     <p>ローカルホストのブラウザ上でOllama（AI）を使えるようにしてみました。</p>
     <img src="img/野村Ollama1-1.png"width="300"><img src="img/野村Ollama1-2.png"width="300"><br>
 
-    <button id="downloadBtn">画像をダウンロード</button><br>
-
-    <script>
-        document.getElementById('downloadBtn').addEventListener('click', function() {
-          // ダウンロード用のリンクを作成
-          const link = document.createElement('a');
-          link.href = document.getElementById('myImage').src;
-          link.download = 'img/野村Ollama1-1.png'; 
-          link.download = 'img/野村Ollama1-2.png';// ダウンロード時のファイル名
-          // リンクをクリックしてダウンロードを実行
-          document.body.appendChild(link);
-          link.click();
-          document.body.removeChild(link);
-        });
-    </script>
+    <a href="img/野村Ollama1-1.png" download>
+        <button>1枚目の画像をダウンロード</button>
+    </a>
+    <a href="img/野村Ollama1-2.png" download>
+        <button>2枚目の画像をダウンロード</button>
+    </a><br>
 
     <h3>4/8〜5/13まで</h3>
     <ul>
