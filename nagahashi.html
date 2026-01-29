@@ -7,8 +7,9 @@
     <style>
       body {
         font-family: "Hiragino Sans", Arial, sans-serif;
-        background: #eef1f5;
+        background: #f5f6f7;
         margin: 0;
+        color: #333;
       }
 
       .mn {
@@ -17,59 +18,42 @@
       }
 
       .mn h2 {
-        font-size: 48px;
-        letter-spacing: 0.07em;
+        font-size: 46px;
+        letter-spacing: 0.05em;
         font-family: "Hurricane", cursive;
-        color: #444;
+        color: #374151;
         margin: 0;
-        text-shadow: 3px 8px 6px rgba(0, 0, 0, 0.18);
+        text-shadow: 2px 4px 6px rgba(0, 0, 0, 0.15);
       }
 
       .container {
         max-width: 900px;
         margin: 0 auto;
-        padding: 0 25px 25px 25px;
+        padding: 0 25px 50px;
       }
 
+      /* ▼ カード（セクション） */
       .section-block {
         margin: 40px 0;
-        padding: 30px 35px;
+        padding: 32px 36px;
         background: white;
-        border-radius: 20px;
+        border-radius: 18px;
         border: 1px solid #e5e7eb;
-        box-shadow: 0 6px 22px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 3px 18px rgba(0, 0, 0, 0.08);
         transition: 0.3s;
       }
 
       .section-block:hover {
-        box-shadow: 0 10px 32px rgba(0, 0, 0, 0.16);
+        box-shadow: 0 6px 26px rgba(0, 0, 0, 0.12);
         transform: translateY(-2px);
       }
 
       .section-block h1 {
+        border-left: 7px solid #93c5fd;
         padding-left: 12px;
-        margin-bottom: 25px;
-        font-size: 28px;
-        color: #333;
-      }
-
-      .intern1 h1 {
-        border-left: 10px solid rgb(238, 230, 221);
-      }
-
-      .intern2 h1 {
-        border-left: 10px solid rgb(204, 246, 208);
-      }
-
-      .zemi h1 {
-        border-left: 10px solid #e5e7eb;
-      }
-
-      .intern1 h3 {
-        background-color: rgb(238, 230, 221);
-      }
-      .intern2 h3 {
-        background-color: rgb(204, 246, 208);
+        margin-bottom: 24px;
+        font-size: 26px;
+        color: #1f2937;
       }
 
       h2 {
@@ -79,12 +63,12 @@
       }
 
       h3 {
-        background: #e5e7eb;
-        padding: 7px 14px;
-        border-radius: 8px;
-        font-size: 18px;
-        margin-top: 28px;
-        color: #333;
+        background: #f3f4f6;
+        padding: 6px 14px;
+        border-radius: 6px;
+        font-size: 17px;
+        margin-top: 26px;
+        color: #111;
       }
 
       p {
@@ -92,6 +76,7 @@
         color: #444;
       }
 
+      /* ▼ 画像(ポスター) */
       .poster {
         display: flex;
         flex-direction: column;
@@ -102,87 +87,32 @@
 
       .poster img {
         max-width: 100%;
-        border-radius: 12px;
-        box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
+        border-radius: 10px;
+        box-shadow: 0 3px 16px rgba(0, 0, 0, 0.1);
       }
 
       a.download-btn {
         display: inline-block;
         text-align: center;
         text-decoration: none;
-        padding: 0.6rem 2rem;
+        padding: 0.5rem 1.8rem;
         font-weight: bold;
         border-radius: 6px;
-        border: 1px solid #27acd9;
-        color: #27acd9;
-        transition: all 0.3s;
+        border: 1px solid #3b82f6;
+        color: #3b82f6;
+        transition: 0.25s;
       }
 
       a.download-btn:hover {
-        background: #27acd9;
+        background: #3b82f6;
         color: white;
       }
 
-      #pdf-container {
-        text-align: center;
-        margin: 40px 0;
-      }
-
-      #pdf-viewer {
-        width: 90%;
-        max-width: 850px;
-        border-radius: 12px;
-        box-shadow: 0 6px 24px rgba(0, 0, 0, 0.25);
-      }
-
-      .pdf-controls {
-        margin-top: 15px;
-        display: flex;
-        justify-content: center;
-        gap: 25px;
-      }
-
-      .pdf-btn {
-        padding: 10px 22px;
-        background: #27acd9;
-        border: none;
-        color: white;
-        font-size: 14px;
-        border-radius: 6px;
-        cursor: pointer;
-        transition: 0.2s;
-      }
-
-      .pdf-btn:hover {
-        background: #1d8bb1;
-      }
-
-      .page-info {
-        font-size: 16px;
-        color: #444;
-      }
-
-      /* Back ボタン */
-      .back-button {
-        text-align: center;
-        margin-top: 60px;
-        padding-bottom: 80px;
-      }
-
-      input[type="button"] {
-        border-radius: 2em;
-        background-color: rgb(104, 104, 103);
-        color: whitesmoke;
-        box-shadow: 7px 7px 6px rgb(207, 193, 177);
-        padding: 12px 32px;
-        cursor: pointer;
-        font-size: 16px;
-      }
-
+      /* ▼ 技術ボックス */
       .tech-box-wrapper {
         display: flex;
         gap: 25px;
-        margin: 25px 0 35px;
+        margin: 20px 0 35px;
         flex-wrap: wrap;
       }
 
@@ -190,18 +120,18 @@
         flex: 1;
         min-width: 130px;
         background: #ffffff;
-        border-radius: 14px;
-        padding: 18px 20px;
-        border: 1px solid #e5e7eb;
+        border-radius: 12px;
+        padding: 16px 18px;
+        border: 1px solid #e4e4e7;
       }
 
       .tech-box h3 {
         background: none;
-        padding: 0;
         margin: 0 0 12px;
-        font-size: 18px;
-        border-left: 6px solid rgb(138, 185, 142);
+        font-size: 17px;
+        border-left: 5px solid #60a5fa;
         padding-left: 10px;
+        color: #1f2937;
       }
 
       .tech-box ul {
@@ -212,6 +142,100 @@
       .tech-box ul li {
         margin-bottom: 6px;
       }
+
+      /* ▼ タブ UI */
+      .tabs {
+        display: flex;
+        justify-content: center;
+        gap: 18px;
+        margin: 35px 0;
+      }
+
+      .tab-btn {
+        padding: 10px 22px;
+        border: 1px solid #3b82f6;
+        background: white;
+        color: #3b82f6;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 15px;
+        transition: 0.25s;
+      }
+
+      .tab-btn:hover {
+        background: #3b82f6;
+        color: white;
+      }
+
+      .tab-btn.active {
+        background: #3b82f6;
+        color: white;
+      }
+
+      .tab-content {
+        display: none;
+      }
+      .tab-content.active {
+        display: block;
+      }
+
+      /* ▼ PDF viewer */
+      #pdf-container {
+        text-align: center;
+        margin: 40px 0;
+      }
+
+      #pdf-viewer {
+        width: 90%;
+        max-width: 850px;
+        border-radius: 10px;
+        box-shadow: 0 5px 22px rgba(0, 0, 0, 0.25);
+      }
+
+      .pdf-controls {
+        margin-top: 12px;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+      }
+
+      .pdf-btn {
+        padding: 8px 20px;
+        background: #3b82f6;
+        border: none;
+        color: white;
+        font-size: 14px;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: 0.2s;
+      }
+
+      .pdf-btn:hover {
+        background: #2563eb;
+      }
+
+      .page-info {
+        font-size: 15px;
+        color: #333;
+        padding-top: 6px;
+      }
+
+      /* ▼ 戻るボタン */
+      .back-button {
+        text-align: center;
+        margin-top: 60px;
+        padding-bottom: 80px;
+      }
+
+      input[type="button"] {
+        border-radius: 2em;
+        background-color: #6b7280;
+        color: whitesmoke;
+        box-shadow: 7px 7px 6px rgba(180, 180, 180, 0.5);
+        padding: 12px 32px;
+        cursor: pointer;
+        font-size: 16px;
+      }
     </style>
   </head>
 
@@ -220,21 +244,25 @@
       <h2>実習と研究</h2>
     </div>
 
+    <!-- ▼ タブメニュー -->
+    <div class="tabs">
+      <button class="tab-btn active" data-target="intern1">実習 I</button>
+      <button class="tab-btn" data-target="intern2">実習 II</button>
+      <button class="tab-btn" data-target="zemi">ゼミ中間発表</button>
+    </div>
+
     <div class="container">
 
-      <div class="section-block intern1">
+      <!-- ▼ 実習 I -->
+      <div class="section-block tab-content active" id="intern1">
         <h1>実習I 企業先</h1>
         <h2>Adam-i Ventures株式会社</h2>
 
         <h3>テーマ</h3>
-        <p>
-          アフリカと⽇本企業を繋ぐビジネスマッチングプラットフォームの構築とコンサルティング
-        </p>
+        <p>アフリカと⽇本企業を繋ぐビジネスマッチングプラットフォームの構築とコンサルティング</p>
 
-        <h3>システムの流れ</h3>
-        <p>
-          今回は開発は行わず、日本語翻訳、営業、コンサルティングに関わった
-        </p>
+        <h3>担当業務</h3>
+        <p>翻訳、日本向け営業、資料作成、コンサルティングサポートを担当（開発業務なし）</p>
 
         <h3>使用技術</h3>
         <p>なし</p>
@@ -242,26 +270,26 @@
         <h3>ポスター</h3>
         <div class="poster">
           <img src="img/2023_Internship1_Poster_Adam_Innovations.png" alt="ポスター" />
-          <a href="img/2023_Internship1_Poster_Adam_Innovations.png" download class="download-btn">
-            download
-          </a>
+          <a href="img/2023_Internship1_Poster_Adam_Innovations.png" download class="download-btn">download</a>
         </div>
       </div>
 
-      <div class="section-block intern2">
+      <!-- ▼ 実習 II -->
+      <div class="section-block tab-content" id="intern2">
         <h1>実習II 企業先</h1>
         <h2>エクスウェア株式会社</h2>
 
         <h3>テーマ</h3>
         <p>勤怠連絡アプリ『CANARY』の開発</p>
 
-        <h3>システムの流れ</h3>
+        <h3>システム概要</h3>
         <p>
-          遅刻、早退など勤怠連絡をしたい場合にアプリでプルダウンから項目を選んで送信すると、コーポレートチームに一元管理される。
-          また、チームメンバーの勤怠状況も確認可能。（権限による）
+          遅刻・早退などの勤怠連絡をアプリで送信し、コーポレートチームが一元管理。<br>
+          また、権限に応じてチームメンバーの勤怠状況も確認可能。
         </p>
 
         <h3>使用技術</h3>
+
         <div class="tech-box-wrapper">
           <div class="tech-box">
             <h3>統合開発環境</h3>
@@ -275,14 +303,13 @@
             <h3>デザイン</h3>
             <ul>
               <li>Figma</li>
-              <li>HTML</li>
-              <li>CSS</li>
+              <li>HTML / CSS</li>
               <li>JavaScript</li>
             </ul>
           </div>
 
           <div class="tech-box">
-            <h3>開発ツール</h3>
+            <h3>開発管理</h3>
             <ul>
               <li>TortoiseGit</li>
               <li>Git</li>
@@ -294,33 +321,31 @@
         <h3>ポスター</h3>
         <div class="poster">
           <img src="img/2024_Internship2_Poster_xware.png" alt="ポスター" />
-          <a href="img/2024_Internship2_Poster_xware.png" download class="download-btn">
-            download
-          </a>
+          <a href="img/2024_Internship2_Poster_xware.png" download class="download-btn">download</a>
         </div>
       </div>
 
-      <div class="section-block zemi">
+      <!-- ▼ ゼミ -->
+      <div class="section-block tab-content" id="zemi">
         <h1>ゼミ研究 中間発表</h1>
 
         <h3>テーマ</h3>
         <p>複数基準に基づく顔属性と画像解析を用いた写真の自動検証</p>
 
         <h3>研究目的</h3>
-        <p>
-          自宅でも正確で規定に準拠した写真を撮影できる環境を構築し、さらにAIが改善をサポートする仕組みを作ることが目的。
-        </p>
+        <p>ユーザーが自宅で規定に準拠した写真を撮影でき、AI が改善点を提示する仕組みを構築する。</p>
 
         <h3>研究背景</h3>
         <p>
-          証明写真には厳格な基準があり、ユーザーが守るのは難しいため再提出が多い。<br />
-          既存の自動判定は「合格/不合格」だけで改善提案が少ないため、ユーザーの撮影スキル向上を支援する仕組みが求められている。
+          証明写真は基準が厳しく再提出が多い。<br>
+          既存の自動判定は「合格/不合格」だけで改善提案が少ないためユーザー支援の仕組みが必要。
         </p>
 
-        <h3>発表資料（スライド表示）</h3>
+        <h3>発表資料PDF</h3>
 
         <div id="pdf-container">
           <canvas id="pdf-viewer"></canvas>
+
           <div class="pdf-controls">
             <button class="pdf-btn" id="prev">◀ Prev</button>
             <span class="page-info">
@@ -331,20 +356,40 @@
         </div>
 
         <div class="poster">
-          <a href="img/20122056_長橋弘幸_中間発表資料.pdf" download class="download-btn">
-            PDF download
-          </a>
+          <a href="img/20122056_長橋弘幸_中間発表資料.pdf" download class="download-btn">PDF download</a>
         </div>
       </div>
 
+      <!-- ▼ 戻る -->
       <div class="back-button">
-        <a href="index.html#tab-2025"
-          ><input type="button" value="Back to Lab / 研究室に戻る"
-        /></a>
+        <a href="index.html#tab-2025">
+          <input type="button" value="Back to Lab / 研究室に戻る" />
+        </a>
       </div>
 
     </div>
 
+    <!-- ▼ タブ制御 JavaScript -->
+    <script>
+      const tabButtons = document.querySelectorAll(".tab-btn");
+      const tabContents = document.querySelectorAll(".tab-content");
+
+      tabButtons.forEach(btn => {
+        btn.addEventListener("click", () => {
+          const target = btn.getAttribute("data-target");
+
+          tabButtons.forEach(b => b.classList.remove("active"));
+          btn.classList.add("active");
+
+          tabContents.forEach(c => {
+            c.classList.remove("active");
+            c.style.display = (c.id === target ? "block" : "none");
+          });
+        });
+      });
+    </script>
+
+    <!-- ▼ PDF.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
 
     <script>

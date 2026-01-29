@@ -75,6 +75,22 @@
     .back-button input[type="button"]:hover {
       background-color: #6a5443;
     }
+    .download-btn{
+  display:inline-block;
+  margin-top:12px;
+  margin-right:10px;
+  background-color:#4a3b2a;
+  color:#fff;
+  padding:8px 20px;
+  border-radius:20px;
+  font-weight:bold;
+  text-decoration:none;
+  transition:background 0.3s;
+}
+.download-btn:hover{
+  background-color:#6a5443;
+}
+
   </style>
 </head>
 <body>
@@ -84,15 +100,50 @@
 
   <div class="container">
     <h3>研究タイトル / Research Title</h3>
-    <p>VR講義におけるリアルタイム字幕生成支援システムの開発</p>
+    <p>AIを活用したペット支援システム「Petalk」の開発と評価</p>
 
     <h3>学籍番号 / Student ID</h3>
     <p>20122022</p>
 
-    <h3>研究目的と背景 / Research Purpose and Background</h3>
-    <p>
-      VR空間内で行われる講義において、講師の発言をリアルタイムで字幕化し、生徒がより理解しやすい学習環境を提供することを目的とする。
-    </p>
+<h3>研究目的と背景 / Research Purpose and Background</h3>
+<p>
+  ペットは家族の一員として扱われる一方、飼育に関する小さな悩みを
+  獣医師に相談するには心理的・費用的なハードルがある。
+</p>
+<p>
+  本研究では、ペット情報を登録・参照できる対話型AI「Petalk」を開発し、
+  個々のペットに合わせたパーソナライズ支援と、
+  ハルシネーション（誤情報）を抑制した安全な応答の実現を目的とする。
+</p>
+
+    <h3>研究概要 / System Overview</h3>
+<ul>
+  <li>ペット情報（年齢・種類・体調など）を登録できる対話型AIシステム</li>
+  <li>Firebaseに保存した情報をAIのプロンプトに自動反映</li>
+  <li>登録情報量の違いによるAI応答品質の変化を評価</li>
+</ul>
+
+    <h3>評価結果 / Evaluation</h3>
+<p>
+  登録情報・推測可能情報・未登録情報の3条件でAI応答を比較した結果、
+  データを十分に登録した場合に正答率が高く、
+  ハルシネーションが大きく抑制される傾向が確認された。
+</p>
+<p>
+  この結果から、構造化された個別データの活用が
+  AI応答の信頼性向上に有効であることが示唆された。
+</p>
+
+    <h3>成果物 / Deliverables</h3>
+<ul>
+  <li>
+    <strong>研究成果サイト（Petalk）：</strong><br>
+    <a href="https://katooooooooooooo.github.io/petals/" target="_blank" rel="noopener noreferrer">
+      https://katooooooooooooo.github.io/petals/
+    </a>
+  </li>
+</ul>
+
 
     <h3>臨地実務実習 I（Zeit株式会社）</h3>
     <ul>
@@ -109,9 +160,19 @@
       </li>
       <li><strong>学び・気づき：</strong> 技術的課題への挑戦と、企業や先生に相談する姿勢の重要性を学んだ。</li>
     </ul>
-    <a href="https://drive.google.com/file/d/1kQYbB__2rj04g5PScgMtb8v2QcFypsMy/view?usp=share_link" target="_blank">
-      Zeitポスターを見る
-    </a>
+<iframe
+  src="https://drive.google.com/file/d/1kQYbB__2rj04g5PScgMtb8v2QcFypsMy/preview"
+  width="100%"
+  height="480"
+  style="border: none; border-radius: 8px;">
+</iframe>
+    <a class="download-btn"
+   href="https://drive.google.com/uc?export=download&id=1kQYbB__2rj04g5PScgMtb8v2QcFypsMy"
+   target="_blank" rel="noopener noreferrer">
+  ダウンロード
+</a>
+
+
 
     <h3>臨地実務実習 II（株式会社ギルド）</h3>
     <ul>
@@ -127,9 +188,63 @@
       </li>
       <li><strong>学び・気づき：</strong> チームでのフィードバック共有、スケジューリング、アウトプットの重要性を実感。</li>
     </ul>
-    <a href="https://drive.google.com/file/d/1Z95eQNVAdwKcNZQVOiZPw2c9mKHPvuhL/view?usp=share_link" target="_blank">
-      ギルドポスターを見る
-    </a>
+<iframe
+  src="https://drive.google.com/file/d/1Z95eQNVAdwKcNZQVOiZPw2c9mKHPvuhL/preview"
+  width="100%"
+  height="480"
+  style="border: none; border-radius: 8px;">
+</iframe>
+    <a class="download-btn"
+   href="https://drive.google.com/uc?export=download&id=1Z95eQNVAdwKcNZQVOiZPw2c9mKHPvuhL"
+   target="_blank" rel="noopener noreferrer">
+  ダウンロード
+</a>
+
+
+
+    <h3>発表資料 / Presentations</h3>
+
+<h4>中間発表</h4>
+<iframe
+  src="https://drive.google.com/file/d/1nTsq2CDDlN2Bb0eJb5y35n-C5024PwHc/preview"
+  width="100%"
+  height="480"
+  style="border: none; border-radius: 8px;">
+</iframe>
+    <a class="download-btn"
+   href="https://drive.google.com/uc?export=download&id=1nTsq2CDDlN2Bb0eJb5y35n-C5024PwHc"
+   target="_blank" rel="noopener noreferrer">
+  ダウンロード
+</a>
+
+
+<h4>卒業論文</h4>
+<iframe
+  src="https://drive.google.com/file/d/1OMhz_umjTOuuzrZDhkfsJBYVue8ZyEOU/preview"
+  width="100%"
+  height="480"
+  style="border: none; border-radius: 8px;">
+</iframe>
+    <a class="download-btn"
+   href="https://drive.google.com/uc?export=download&id=1OMhz_umjTOuuzrZDhkfsJBYVue8ZyEOU"
+   target="_blank" rel="noopener noreferrer">
+  ダウンロード
+</a>
+
+
+<h4>最終発表</h4>
+<iframe
+  src="https://drive.google.com/file/d/1xduF4xU0SjsLShUxwsuP1yph2gfGOR8R/preview"
+  width="100%"
+  height="480"
+  style="border: none; border-radius: 8px;">
+</iframe>
+<a class="download-btn"
+   href="https://drive.google.com/uc?export=download&id=1xduF4xU0SjsLShUxwsuP1yph2gfGOR8R"
+   target="_blank" rel="noopener noreferrer">
+  ダウンロード
+</a>
+
 
     <div class="back-button">
       <a href="index.html#tab-2025"><input type="button" value="Back to Lab / 研究室に戻る"></a>
