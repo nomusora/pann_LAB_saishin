@@ -173,23 +173,26 @@
       }
 
       .tab-content {
-        display: none;
+        display: none !important;
       }
       .tab-content.active {
-        display: block;
+        display: block !important;
       }
 
       /* ▼ PDF viewer */
-      #pdf-container {
+      #pdf-container, #pdf-container-final, #pdf-container-thesis {
         text-align: center;
         margin: 40px 0;
       }
 
-      #pdf-viewer {
-        width: 90%;
+      #pdf-viewer, #pdf-viewer-final, #pdf-viewer-thesis {
+        width: 100%;
         max-width: 850px;
+        max-height: 600px;
         border-radius: 10px;
         box-shadow: 0 5px 22px rgba(0, 0, 0, 0.25);
+        display: block;
+        margin: 0 auto;
       }
 
       .pdf-controls {
@@ -249,6 +252,7 @@
       <button class="tab-btn active" data-target="intern1">実習 I</button>
       <button class="tab-btn" data-target="intern2">実習 II</button>
       <button class="tab-btn" data-target="zemi">ゼミ中間発表</button>
+      <button class="tab-btn" data-target="zemi-final">ゼミ最終発表</button>
     </div>
 
     <div class="container">
@@ -341,7 +345,7 @@
           既存の自動判定は「合格/不合格」だけで改善提案が少ないためユーザー支援の仕組みが必要。
         </p>
 
-        <h3>発表資料PDF</h3>
+        <h3>発表資料</h3>
 
         <div id="pdf-container">
           <canvas id="pdf-viewer"></canvas>
@@ -357,6 +361,64 @@
 
         <div class="poster">
           <a href="img/20122056_長橋弘幸_中間発表資料.pdf" download class="download-btn">PDF download</a>
+        </div>
+      </div>
+
+      <!-- ▼ ゼミ最終発表 -->
+      <div class="section-block tab-content" id="zemi-final">
+        <h1>ゼミ研究 最終発表</h1>
+
+        <h3>テーマ</h3>
+        <p>複数基準に基づく顔属性と画像解析を用いた写真の自動検証</p>
+
+        <h3>研究背景</h3>
+        <p>
+          <b>・規格の厳格性：</b>マイナンバーカードやパスポートでは、背景、顔の向き、表情、顔の比率など、機関が定める基準を遵守する必要がある <br>
+          <b>・自撮り需要の増加：</b>自身で撮影する機会が増えたが、一般ユーザーが複雑な規格を正確に理解し、遵守することは容易ではない <br>
+          <b>・再提出の負担：</b>基準を満たさない写真による不備が発生し、申請者にとって大きな負担となる <br>
+          <b>・社会的な重要性：</b>行政手続きだけでなく、就職活動のオンライン化に伴い、高品質な写真データの重要性が増している <br>
+        </p>
+
+        <h3>研究目的</h3>
+        <p>
+          <b>・高精度な画像解析：</b>MediaPipeやYOLOなどを統合し、複数の基準を同時に判定する<br>
+          <b>・フィードバック：</b>規格適合性を検証し、フィードバックを出すシステムを構築する <br>
+          <b>・アクセシビリティの向上：</b>自宅で、低コストかつWeb提出にも対応した規格に則した写真を撮影できる環境を実現する </p>
+
+        <h3>発表資料</h3>
+
+        <div id="pdf-container-final">
+          <canvas id="pdf-viewer-final"></canvas>
+
+          <div class="pdf-controls">
+            <button class="pdf-btn" id="prev-final">◀ Prev</button>
+            <span class="page-info">
+              <span id="page-num-final"></span> / <span id="page-count-final"></span>
+            </span>
+            <button class="pdf-btn" id="next-final">Next ▶</button>
+          </div>
+        </div>
+
+        <div class="poster">
+          <a href="img/20122056_長橋弘幸_最終発表資料.pdf" download class="download-btn">PDF download</a>
+        </div>
+
+        <h3 style="margin-top: 60px;">最終論文</h3>
+
+        <div id="pdf-container-thesis">
+          <canvas id="pdf-viewer-thesis"></canvas>
+
+          <div class="pdf-controls">
+            <button class="pdf-btn" id="prev-thesis">◀ Prev</button>
+            <span class="page-info">
+              <span id="page-num-thesis"></span> / <span id="page-count-thesis"></span>
+            </span>
+            <button class="pdf-btn" id="next-thesis">Next ▶</button>
+          </div>
+        </div>
+
+        <div class="poster">
+          <a href="img/最終論文_20122056_長橋弘幸.pdf" download class="download-btn">PDF download</a>
         </div>
       </div>
 
@@ -382,9 +444,27 @@
           btn.classList.add("active");
 
           tabContents.forEach(c => {
-            c.classList.remove("active");
-            c.style.display = (c.id === target ? "block" : "none");
+            if (c.id === target) {
+              c.classList.add("active");
+            } else {
+              c.classList.remove("active");
+            }
           });
+
+          // PDFを再描画する必要がある場合はここで処理
+          if (target === "zemi") {
+            setTimeout(() => {
+              initPdf("zemi");
+              renderPdfPage("zemi", pdfManagers.zemi.pageNum);
+            }, 100);
+          } else if (target === "zemi-final") {
+            setTimeout(() => {
+              initPdf("final");
+              renderPdfPage("final", pdfManagers.final.pageNum);
+              initPdf("thesis");
+              renderPdfPage("thesis", pdfManagers.thesis.pageNum);
+            }, 100);
+          }
         });
       });
     </script>
@@ -393,45 +473,101 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
 
     <script>
-      const url = "img/20122056_長橋弘幸_中間発表資料.pdf";
+      pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js";
 
-      let pdfDoc = null,
-        pageNum = 1,
-        canvas = document.getElementById("pdf-viewer"),
-        ctx = canvas.getContext("2d");
+      // PDF管理オブジェクト
+      const pdfManagers = {
+        zemi: {
+          url: "img/20122056_長橋弘幸_中間発表資料.pdf",
+          canvasId: "pdf-viewer",
+          pageNumId: "page-num",
+          pageCountId: "page-count",
+          prevBtnId: "prev",
+          nextBtnId: "next",
+          doc: null,
+          pageNum: 1,
+          loaded: false
+        },
+        final: {
+          url: "img/20122056_長橋弘幸_最終発表資料.pdf",
+          canvasId: "pdf-viewer-final",
+          pageNumId: "page-num-final",
+          pageCountId: "page-count-final",
+          prevBtnId: "prev-final",
+          nextBtnId: "next-final",
+          doc: null,
+          pageNum: 1,
+          loaded: false
+        },
+        thesis: {
+          url: "img/最終論文_20122056_長橋弘幸.pdf",
+          canvasId: "pdf-viewer-thesis",
+          pageNumId: "page-num-thesis",
+          pageCountId: "page-count-thesis",
+          prevBtnId: "prev-thesis",
+          nextBtnId: "next-thesis",
+          doc: null,
+          pageNum: 1,
+          loaded: false
+        }
+      };
 
-      pdfjsLib.getDocument(url).promise.then((pdf) => {
-        pdfDoc = pdf;
-        document.getElementById("page-count").textContent = pdf.numPages;
-        renderPage(pageNum);
-      });
+      // PDF初期化
+      function initPdf(key) {
+        const manager = pdfManagers[key];
+        if (manager.loaded) return;
 
-      function renderPage(num) {
-        pdfDoc.getPage(num).then((page) => {
-          const viewport = page.getViewport({ scale: 1.5 });
+        const canvas = document.getElementById(manager.canvasId);
+        if (!canvas) return;
+
+        pdfjsLib.getDocument(manager.url).promise.then((pdf) => {
+          manager.doc = pdf;
+          document.getElementById(manager.pageCountId).textContent = pdf.numPages;
+          renderPdfPage(key, manager.pageNum);
+          manager.loaded = true;
+        }).catch(err => console.error(`Error loading ${key} PDF:`, err));
+      }
+
+      // PDFページレンダリング
+      function renderPdfPage(key, num) {
+        const manager = pdfManagers[key];
+        if (!manager.doc) return;
+
+        const canvas = document.getElementById(manager.canvasId);
+        const ctx = canvas.getContext("2d");
+
+        manager.doc.getPage(num).then((page) => {
+          const viewport = page.getViewport({ scale: 0.7 });
           canvas.height = viewport.height;
           canvas.width = viewport.width;
 
-          const renderContext = {
-            canvasContext: ctx,
-            viewport: viewport,
-          };
-          page.render(renderContext);
-
-          document.getElementById("page-num").textContent = num;
+          page.render({ canvasContext: ctx, viewport: viewport });
+          document.getElementById(manager.pageNumId).textContent = num;
         });
       }
 
-      document.getElementById("prev").addEventListener("click", () => {
-        if (pageNum <= 1) return;
-        pageNum--;
-        renderPage(pageNum);
-      });
+      // ボタンイベント設定
+      Object.keys(pdfManagers).forEach(key => {
+        const manager = pdfManagers[key];
+        
+        const prevBtn = document.getElementById(manager.prevBtnId);
+        const nextBtn = document.getElementById(manager.nextBtnId);
 
-      document.getElementById("next").addEventListener("click", () => {
-        if (pageNum >= pdfDoc.numPages) return;
-        pageNum++;
-        renderPage(pageNum);
+        if (prevBtn) {
+          prevBtn.addEventListener("click", () => {
+            if (manager.pageNum <= 1) return;
+            manager.pageNum--;
+            renderPdfPage(key, manager.pageNum);
+          });
+        }
+
+        if (nextBtn) {
+          nextBtn.addEventListener("click", () => {
+            if (manager.pageNum >= manager.doc.numPages) return;
+            manager.pageNum++;
+            renderPdfPage(key, manager.pageNum);
+          });
+        }
       });
     </script>
   </body>
